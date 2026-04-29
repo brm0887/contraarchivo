@@ -117,10 +117,224 @@
       color: #5a3a28;
       line-height: 1.5;
     }
+
+    .controversial-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
+.controversial-link {
+  font-weight: bold;
+  color: #b22222;
+  background: #fff0d6;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: help;
+  text-decoration: underline;
+}
+
+.controversial-popup {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: 360px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 2px solid #b22222;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  color: #2a1a12;
+  font-size: 14px;
+  line-height: 1.45;
+  z-index: 20;
+}
+
+.controversial-wrapper:hover .controversial-popup {
+  display: block;
+}
+    .intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 15, 10, 0.72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.intro-box {
+  width: 75%;
+  max-width: 900px;
+  max-height: 82vh;
+  background: rgba(255, 248, 235, 0.98);
+  border: 3px solid #4b2e1f;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.intro-tabs {
+  display: flex;
+  background: #4b2e1f;
+}
+
+.intro-tab {
+  flex: 1;
+  padding: 14px 10px;
+  border: none;
+  background: #4b2e1f;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.intro-tab.active {
+  background: #8b5e3c;
+}
+
+.intro-content {
+  display: none;
+  padding: 28px 38px;
+  max-height: 58vh;
+  overflow-y: auto;
+  color: #2a1a12;
+  line-height: 1.55;
+  font-size: 17px;
+}
+
+.intro-content.active {
+  display: block;
+}
+
+.intro-content h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 22px;
+  color: #4b2e1f;
+  text-transform: titlecase;
+}
+
+.intro-content p {
+  margin-bottom: 16px;
+}
+
+.stat {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 28px 0;
+  color: #4b2e1f;
+}
+
+.intro-content a {
+  color: #8b1e1e;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.intro-buttons {
+  padding: 18px;
+  text-align: center;
+  background: rgba(75, 46, 31, 0.08);
+}
+
+.intro-buttons button {
+  padding: 11px 28px;
+  border: none;
+  border-radius: 8px;
+  background: #4b2e1f;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", serif;
+  cursor: pointer;
+}
+
+.intro-buttons button:hover {
+  background: #8b5e3c;
+}
   </style>
 </head>
 
 <body>
+  <div id="introOverlay" class="intro-overlay">
+  <div class="intro-box">
+    <div class="intro-tabs">
+      <button class="intro-tab active" id="introTab1">Abstract</button>
+      <button class="intro-tab" id="introTab2">El Contexto Del Estado Entero</button>
+      <button class="intro-tab" id="introTab3">Fuentes</button>
+    </div>
+
+    <div class="intro-content active" id="introContent1">
+      <h1>Abstract</h1>
+
+      <p>
+        Las prohibiciones de libros en Florida se dirigen a obras con temáticas latinas e inmigrantes, en un intento de borrar estas narrativas del espacio escolar. Sin embargo, la realidad es que muchos estudiantes en Florida viven precisamente esas experiencias, por lo que dichas prohibiciones constituyen una marginación de sus vivencias. Mi archivo digital va a yuxtaponer las historias que el estado considera no apropiadas para los estudiantes con las experiencias de los propios estudiantes que viven esas mismas realidades.
+      </p>
+
+      <p>
+        Estudio los libros prohibidos en Florida a través del marco de los silencios archivísticos como Derrida ha descrito y la creación de este sitio web como un contra-archivo comunitario, para demostrar cómo la censura produce borramiento cultural y por qué es importante documentar estos textos. Cuando este archivo funcionará como un contra-archivo, este reafirma el lugar de estas historias en la memoria cultural.
+      </p>
+
+      <p>
+        Estos objetivos se cumplirán mediante la creación de un sitio web. Cuando el usuario haga click a la imagen de un libro prohibido, aparecerá un cuadro de texto con las razones de su prohibición, junto con estadísticas y testimonios que demuestran que esos temas prohibidos forman parte de la realidad de la población estudiantil.
+      </p>
+
+      <p>
+        El formato digital también permite que el usuario vea de manera inmediata la contradicción entre los argumentos oficiales para censurar estos libros y la realidad social de los estudiantes. Al colocar estas narrativas en diálogo directo, el proyecto busca generar empatía, reflexión crítica y una mayor conciencia sobre las consecuencias educativas y culturales de la censura.
+      </p>
+    </div>
+
+    <div class="intro-content" id="introContent2">
+      <h1>El Contexto Del Estado Entero</h1>
+
+      <p class="stat">35.8% of students in Florida public schools are Latino.</p>
+
+      <p class="stat">67 Traditional Districts</p>
+
+      <p class="stat">3,259 Traditional Public Schools con 738 Public Charter Schools</p>
+    </div>
+
+    <div class="intro-content" id="introContent3">
+      <h1>Fuentes</h1>
+
+      <p>
+        <strong>Reportes oficiales de las prohibiciones de los libros:</strong>
+      </p>
+
+      <p>
+        <a href="school%20year%202024-2025.pdf" target="_blank">
+          2024-2025 School District Reporting Pursuant to Section 1006.28(2), Florida Statutes
+        </a>
+      </p>
+
+      <p>
+        <a href="school%20year%202023-2024.pdf" target="_blank">
+          2023-2024 School District Reporting Pursuant to Section 1006.28(2), Florida Statutes
+        </a>
+      </p>
+
+      <p>
+        <a href="school%20year%202022-2023.pdf" target="_blank">
+          2022-2023 School District Reporting Pursuant to Section 1006.28(2), Florida Statutes
+        </a>
+      </p>
+    </div>
+
+    <div class="intro-buttons">
+      <button id="introNextButton" onclick="nextIntroTab()">Next</button>
+    </div>
+  </div>
+</div>
 
   <img
     src="cover_La_casa_en_Mango_Street.jpg"
@@ -151,21 +365,23 @@
         <span class="label">Resumen:</span> Esta es la historia de la llegada a la mayoría de edad de una niña chicana. Cuando Esperanza Cordero tenía 12 años, su familia se mudó a un barrio latino en Chicago, Illinois. La historia la sigue a ella y a sus amigos mientras crecen emocionalmente, artísticamente y sexualmente. En una serie de retratos, la autora explora la opresión, el racismo, el sexismo y la pobreza.
       </p>
 
-      <p><span class="label">Las razones por la prohibición:</span></p>
-      <div class="fill-box">
-        Escribe aquí...
-      </div>
+      <p><span class="label">Las razones por la prohibición:</span> contenido sexual, temas sexuales, profanidad</p>
 
-      <p><span class="label">Las razones en contexto:</span></p>
-      <div class="fill-box">
-        Escribe aquí...
-      </div>
+      <p><span class="label">Las razones en contexto:</span> Esperanza es violada en el retrato se llama “Red Clowns.”</p>
 
-      <p><span class="label">Resumen de “Red Clowns” de SparkNotes:</span></p>
-      <div class="fill-box">
-        Escribe aquí...
-      </div>
-    </div>
+     <p class="controversial-wrapper">
+  <span class="controversial-link">
+    Leer el resumen de las escenas controversiales
+  </span>
+
+  <span class="controversial-popup">
+“Esperanza narra esta sección después de que haya sido agredida sexualmente por un grupo de chicos, y aunque ella le da sus impresiones y expresa su confusión, nunca especifica exactamente lo que los chicos le hacen. Sabemos que Esperanza va a un carnaval con Sally y que le gusta ver a Sally en los paseos. Sally parece descuidada y libre, y en un momento desaparece con un niño mayor. Mientras Esperanza espera a que Sally regrese, un grupo de chicos no latinos ataca a Esperanza. El evento no es nada como encuentros sexuales Esperanza ha visto en las películas o leído en revistas, o incluso como lo que Sally le ha dicho. Está traumatizada y sigue oyendo la voz de uno de los chicos diciendo con burla: "Te amo, chica española". Ella culpa a Sally por abandonarla y no estar allí para salvarla, y su ira se extiende a todas las mujeres que no le han dicho cómo es realmente el sexo.”
+      Puedes leer más en 
+  <a href="https://www.sparknotes.com/lit/mangostreet/section10/" target="_blank">
+    SparkNotes aquí
+  </a>.
+  </span>
+</p>
 
     <div id="contraarchivo" class="tab-content">
       <p><span class="label">Contraarchivo:</span></p>
@@ -183,24 +399,19 @@
     let offsetX = 0;
     let offsetY = 0;
 
-    book.addEventListener("mouseenter", () => {
-      popup.classList.add("show");
-      positionPopupNearBook();
-    });
+book.addEventListener("click", (e) => {
+  e.stopPropagation();
+  popup.classList.toggle("show");
+  positionPopupNearBook();
+});
 
-    book.addEventListener("mouseleave", () => {
-      setTimeout(() => {
-        if (!popup.matches(":hover") && !book.matches(":hover")) {
-          popup.classList.remove("show");
-        }
-      }, 150);
-    });
+popup.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
 
-    popup.addEventListener("mouseleave", () => {
-      if (!book.matches(":hover")) {
-        popup.classList.remove("show");
-      }
-    });
+document.addEventListener("click", () => {
+  popup.classList.remove("show");
+});
 
     book.addEventListener("mousedown", (e) => {
       isDragging = true;
@@ -265,6 +476,25 @@
         tabButtons[1].classList.add("active");
       }
     }
+    let currentIntroTab = 1;
+
+function nextIntroTab() {
+  document.getElementById("introContent" + currentIntroTab).classList.remove("active");
+  document.getElementById("introTab" + currentIntroTab).classList.remove("active");
+
+  currentIntroTab++;
+
+  if (currentIntroTab <= 3) {
+    document.getElementById("introContent" + currentIntroTab).classList.add("active");
+    document.getElementById("introTab" + currentIntroTab).classList.add("active");
+
+    if (currentIntroTab === 3) {
+      document.getElementById("introNextButton").textContent = "Entrar al archivo";
+    }
+  } else {
+    document.getElementById("introOverlay").style.display = "none";
+  }
+}
   </script>
 
 </body>
