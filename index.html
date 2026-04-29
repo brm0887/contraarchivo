@@ -288,6 +288,21 @@
   text-align: center;
   margin-top: 10px;
 }
+    .map-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 12px 20px;
+  background: #4b2e1f;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.map-button:hover {
+  background: #8b5e3c;
+}
   </style>
 </head>
 
@@ -373,20 +388,24 @@
   </div>
 
 
-  <div class="map-section">
-    <h2>Mapa: Estudiantes De Hogares Inmigrantes</h2>
+<div class="map-section">
+  <h2>Mapa: Estudiantes De Hogares Inmigrantes</h2>
 
-    <iframe
-      src="https://cis.org/Percentage-Students-Immigrant-Households-Full-2021"
-      class="embedded-map"
-      title="Mapping the Impact of Immigration on Public Schools - 2021"
-      loading="lazy">
-    </iframe>
+  <p>
+    Este mapa interactivo no puede mostrarse directamente dentro de este sitio porque la página original bloquea la incrustación. 
+    Puede abrirse en una nueva pestaña para explorar los datos por distrito.
+  </p>
 
-    <p class="map-credit">
-      Fuente: Center for Immigration Studies, “Mapping the Impact of Immigration on Public Schools - 2021.”
-    </p>
-  </div>
+  <a 
+    href="https://cis.org/Percentage-Students-Immigrant-Households-Full-2021" 
+    target="_blank" 
+    class="map-button">
+    Abrir El Mapa Interactivo
+  </a>
+
+  <p class="map-credit">
+    Fuente: Center for Immigration Studies, “Mapping the Impact of Immigration on Public Schools - 2021.”
+  </p>
 </div>
 
     <div class="intro-content" id="introContent3">
