@@ -262,6 +262,32 @@
 .intro-buttons button:hover {
   background: #8b5e3c;
 }
+    .map-section {
+  margin-top: 25px;
+  padding: 16px;
+  border: 2px solid #4b2e1f;
+  border-radius: 12px;
+  background: rgba(255, 248, 235, 0.95);
+}
+
+.map-section h2 {
+  text-align: center;
+  color: #4b2e1f;
+  margin-top: 0;
+}
+
+.embedded-map {
+  width: 100%;
+  height: 520px;
+  border: 2px solid #8b5e3c;
+  border-radius: 10px;
+}
+
+.map-credit {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 10px;
+}
   </style>
 </head>
 
@@ -295,14 +321,60 @@
     </div>
 
     <div class="intro-content" id="introContent2">
-      <h1>El Contexto Del Estado Entero</h1>
+  <h1>El Año 2025-2026 En Las Escuelas Públicas De Florida En Números</h1>
 
-      <p class="stat">35.8% of students in Florida public schools are Latino.</p>
-
-      <p class="stat">67 Traditional Districts</p>
-
-      <p class="stat">3,259 Traditional Public Schools con 738 Public Charter Schools</p>
+  <div class="two-column-section">
+    <div class="text-side">
+      <h2>Población Hispana</h2>
+      <p>
+        38,2% de los estudiantes en las escuelas públicas de Florida son hispanos. 
+        Se compone de 1.068.077 estudiantes de un total de 2.792.954.
+      </p>
     </div>
+
+    <div class="image-side">
+      <img 
+        src="chart_poblacion_hispano.png" 
+        alt="Gráfico de la población hispana en las escuelas públicas de Florida"
+        class="context-chart"
+      />
+    </div>
+  </div>
+
+  <h2>Migración</h2>
+  <p>
+    0,3% de los estudiantes son migrantes, significando que 8.441 estudiantes no son ciudadanos. 
+    Pero el porcentaje de estudiantes que tienen al menos un padre que es inmigrante es mucho más alto. 
+    Desplácese hacia abajo para ver un mapa de los hogares inmigrantes y los distritos escolares.
+  </p>
+
+  <h2>Lengua</h2>
+  <p>
+    12,3% de la población total, o 344.427 estudiantes, están aprendiendo inglés en el año escolar 2025-2026.
+  </p>
+
+  <h2>Proceso Gubernamental</h2>
+  <p>
+    Hay 3.259 escuelas públicas en 67 distritos escolares, que son los mismos distritos de los condados. 
+    Las prohibiciones son evaluadas a nivel de condado, y el condado de Clay tiene la mayor cantidad de prohibiciones 
+    en los cuatro años pasados, con 745 libros eliminados.
+  </p>
+
+  <div class="map-section">
+    <h2>Mapa: Estudiantes De Hogares Inmigrantes</h2>
+
+    <iframe
+      src="https://cis.org/Percentage-Students-Immigrant-Households-Full-2021"
+      class="embedded-map"
+      title="Mapping the Impact of Immigration on Public Schools - 2021"
+      loading="lazy">
+    </iframe>
+
+    <p class="map-credit">
+      Fuente: Center for Immigration Studies, “Mapping the Impact of Immigration on Public Schools - 2021.”
+    </p>
+  </div>
+</div>
 
     <div class="intro-content" id="introContent3">
       <h1>Fuentes</h1>
@@ -498,4 +570,6 @@ function nextIntroTab() {
   </script>
 
 </body>
+
+
 </html>
