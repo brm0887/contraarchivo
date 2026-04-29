@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Contraarchivo de libros prohibidos</title>
 
   <style>
@@ -17,10 +18,180 @@
       font-family: Georgia, "Times New Roman", serif;
     }
 
+    /* INTRO */
+
+    .intro-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(25, 15, 10, 0.75);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .intro-box {
+      width: 78%;
+      max-width: 950px;
+      height: 84vh;
+      background: rgba(255, 248, 235, 0.98);
+      border: 3px solid #4b2e1f;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .intro-tabs {
+      display: flex;
+      background: #4b2e1f;
+      flex-shrink: 0;
+    }
+
+    .intro-tab {
+      flex: 1;
+      padding: 14px 10px;
+      border: none;
+      background: #4b2e1f;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .intro-tab.active {
+      background: #8b5e3c;
+    }
+
+    .intro-content {
+      display: none;
+      padding: 28px 38px;
+      overflow-y: auto;
+      color: #2a1a12;
+      line-height: 1.55;
+      font-size: 17px;
+      flex: 1;
+    }
+
+    .intro-content.active {
+      display: block;
+    }
+
+    .intro-content h1 {
+      text-align: center;
+      font-size: 30px;
+      margin-top: 0;
+      margin-bottom: 22px;
+      color: #4b2e1f;
+    }
+
+    .intro-content h2 {
+      color: #4b2e1f;
+      font-size: 23px;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .intro-content p {
+      margin-bottom: 16px;
+    }
+
+    .intro-content a {
+      color: #8b1e1e;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .intro-buttons {
+      padding: 14px;
+      text-align: center;
+      background: rgba(75, 46, 31, 0.08);
+      flex-shrink: 0;
+      border-top: 1px solid rgba(75, 46, 31, 0.25);
+    }
+
+    .intro-buttons button {
+      padding: 11px 28px;
+      border: none;
+      border-radius: 8px;
+      background: #4b2e1f;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: Georgia, "Times New Roman", serif;
+      cursor: pointer;
+    }
+
+    .intro-buttons button:hover {
+      background: #8b5e3c;
+    }
+
+    .two-column-section {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 26px;
+    }
+
+    .text-side {
+      flex: 1;
+    }
+
+    .image-side {
+      flex: 1;
+      text-align: center;
+    }
+
+    .context-chart {
+      max-width: 100%;
+      max-height: 280px;
+      border: 2px solid #8b5e3c;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .map-section {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      padding: 16px;
+      border: 2px solid #4b2e1f;
+      border-radius: 12px;
+      background: rgba(255, 248, 235, 0.95);
+    }
+
+    .map-button {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      padding: 12px 20px;
+      background: #4b2e1f;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .map-button:hover {
+      background: #8b5e3c;
+    }
+
+    .map-credit {
+      font-size: 13px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* MAIN ARCHIVE */
+
+    #mainArchive {
+      display: none;
+    }
+
     .book {
       position: absolute;
-      top: 200px;
-      left: 200px;
       width: 120px;
       cursor: grab;
       z-index: 2;
@@ -37,11 +208,9 @@
 
     .popup {
       position: absolute;
-      top: 170px;
-      left: 340px;
-      width: 440px;
-      max-height: 540px;
-      background: rgba(255, 248, 235, 0.96);
+      width: 460px;
+      max-height: 560px;
+      background: rgba(255, 248, 235, 0.97);
       border: 2px solid #4b2e1f;
       border-radius: 12px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
@@ -79,7 +248,7 @@
       display: none;
       padding: 18px;
       overflow-y: auto;
-      max-height: 470px;
+      max-height: 490px;
       font-size: 15px;
       line-height: 1.45;
       color: #2a1a12;
@@ -98,7 +267,7 @@
     }
 
     .fill-box {
-      min-height: 90px;
+      min-height: 85px;
       padding: 10px;
       margin-top: 6px;
       margin-bottom: 14px;
@@ -119,413 +288,369 @@
     }
 
     .controversial-wrapper {
-  position: relative;
-  margin-top: 10px;
-}
+      position: relative;
+      margin-top: 10px;
+    }
 
-.controversial-link {
-  font-weight: bold;
-  color: #b22222;
-  background: #fff0d6;
-  padding: 6px 8px;
-  border-radius: 6px;
-  cursor: help;
-  text-decoration: underline;
-}
+    .controversial-link {
+      font-weight: bold;
+      color: #b22222;
+      background: #fff0d6;
+      padding: 6px 8px;
+      border-radius: 6px;
+      cursor: help;
+      text-decoration: underline;
+    }
 
-.controversial-popup {
-  display: none;
-  position: absolute;
-  top: 34px;
-  left: 0;
-  width: 360px;
-  max-height: 220px;
-  overflow-y: auto;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.98);
-  border: 2px solid #b22222;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  color: #2a1a12;
-  font-size: 14px;
-  line-height: 1.45;
-  z-index: 20;
-}
+    .controversial-popup {
+      display: none;
+      position: absolute;
+      top: 34px;
+      left: 0;
+      width: 360px;
+      max-height: 220px;
+      overflow-y: auto;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.98);
+      border: 2px solid #b22222;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      color: #2a1a12;
+      font-size: 14px;
+      line-height: 1.45;
+      z-index: 20;
+    }
 
-.controversial-wrapper:hover .controversial-popup {
-  display: block;
-}
-    .intro-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(25, 15, 10, 0.72);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
+    .controversial-wrapper:hover .controversial-popup {
+      display: block;
+    }
 
-.intro-box {
-  width: 75%;
-  max-width: 900px;
-  max-height: 82vh;
-  background: rgba(255, 248, 235, 0.98);
-  border: 3px solid #4b2e1f;
-  border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
-  overflow: hidden;
-  font-family: Georgia, "Times New Roman", serif;
-}
+    .controversial-popup a {
+      color: #8b1e1e;
+      font-weight: bold;
+    }
 
-.intro-tabs {
-  display: flex;
-  background: #4b2e1f;
-}
+    @media (max-width: 750px) {
+      .intro-box {
+        width: 92%;
+        height: 88vh;
+      }
 
-.intro-tab {
-  flex: 1;
-  padding: 14px 10px;
-  border: none;
-  background: #4b2e1f;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: Georgia, "Times New Roman", serif;
-}
+      .intro-content {
+        padding: 22px;
+        font-size: 15px;
+      }
 
-.intro-tab.active {
-  background: #8b5e3c;
-}
+      .two-column-section {
+        flex-direction: column;
+      }
 
-.intro-content {
-  display: none;
-  padding: 28px 38px;
-  max-height: 58vh;
-  overflow-y: auto;
-  color: #2a1a12;
-  line-height: 1.55;
-  font-size: 17px;
-}
-
-.intro-content.active {
-  display: block;
-}
-
-.intro-content h1 {
-  text-align: center;
-  font-size: 30px;
-  margin-top: 0;
-  margin-bottom: 22px;
-  color: #4b2e1f;
-  text-transform: titlecase;
-}
-
-.intro-content p {
-  margin-bottom: 16px;
-}
-
-.stat {
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
-  margin: 28px 0;
-  color: #4b2e1f;
-}
-
-.intro-content a {
-  color: #8b1e1e;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.intro-buttons {
-  padding: 18px;
-  text-align: center;
-  background: rgba(75, 46, 31, 0.08);
-}
-
-.intro-buttons button {
-  padding: 11px 28px;
-  border: none;
-  border-radius: 8px;
-  background: #4b2e1f;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: Georgia, "Times New Roman", serif;
-  cursor: pointer;
-}
-
-.intro-buttons button:hover {
-  background: #8b5e3c;
-}
-    .map-section {
-  margin-top: 25px;
-  padding: 16px;
-  border: 2px solid #4b2e1f;
-  border-radius: 12px;
-  background: rgba(255, 248, 235, 0.95);
-}
-
-.map-section h2 {
-  text-align: center;
-  color: #4b2e1f;
-  margin-top: 0;
-}
-
-.embedded-map {
-  width: 100%;
-  height: 520px;
-  border: 2px solid #8b5e3c;
-  border-radius: 10px;
-}
-
-.map-credit {
-  font-size: 13px;
-  text-align: center;
-  margin-top: 10px;
-}
-    .map-button {
-  display: block;
-  width: fit-content;
-  margin: 20px auto;
-  padding: 12px 20px;
-  background: #4b2e1f;
-  color: white;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.map-button:hover {
-  background: #8b5e3c;
-}
+      .popup {
+        width: 88%;
+      }
+    }
   </style>
 </head>
 
 <body>
+
   <div id="introOverlay" class="intro-overlay">
-  <div class="intro-box">
-    <div class="intro-tabs">
-      <button class="intro-tab active" id="introTab1">Abstract</button>
-      <button class="intro-tab" id="introTab2">El Contexto Del Estado Entero</button>
-      <button class="intro-tab" id="introTab3">Fuentes</button>
-    </div>
+    <div class="intro-box">
 
-    <div class="intro-content active" id="introContent1">
-      <h1>Abstract</h1>
+      <div class="intro-tabs">
+        <button class="intro-tab active" id="introTab1">Abstract</button>
+        <button class="intro-tab" id="introTab2">Contexto</button>
+        <button class="intro-tab" id="introTab3">Fuentes</button>
+      </div>
 
-      <p>
-        Las prohibiciones de libros en Florida se dirigen a obras con temáticas latinas e inmigrantes, en un intento de borrar estas narrativas del espacio escolar. Sin embargo, la realidad es que muchos estudiantes en Florida viven precisamente esas experiencias, por lo que dichas prohibiciones constituyen una marginación de sus vivencias. Mi archivo digital va a yuxtaponer las historias que el estado considera no apropiadas para los estudiantes con las experiencias de los propios estudiantes que viven esas mismas realidades.
-      </p>
+      <div class="intro-content active" id="introContent1">
+        <h1>Abstract</h1>
 
-      <p>
-        Estudio los libros prohibidos en Florida a través del marco de los silencios archivísticos como Derrida ha descrito y la creación de este sitio web como un contra-archivo comunitario, para demostrar cómo la censura produce borramiento cultural y por qué es importante documentar estos textos. Cuando este archivo funcionará como un contra-archivo, este reafirma el lugar de estas historias en la memoria cultural.
-      </p>
+        <p>
+          Las prohibiciones de libros en Florida se dirigen a obras con temáticas latinas e inmigrantes, en un intento de borrar estas narrativas del espacio escolar. Sin embargo, la realidad es que muchos estudiantes en Florida viven precisamente esas experiencias, por lo que dichas prohibiciones constituyen una marginación de sus vivencias. Mi archivo digital va a yuxtaponer las historias que el estado considera no apropiadas para los estudiantes con las experiencias de los propios estudiantes que viven esas mismas realidades.
+        </p>
 
-      <p>
-        Estos objetivos se cumplirán mediante la creación de un sitio web. Cuando el usuario haga click a la imagen de un libro prohibido, aparecerá un cuadro de texto con las razones de su prohibición, junto con estadísticas y testimonios que demuestran que esos temas prohibidos forman parte de la realidad de la población estudiantil.
-      </p>
+        <p>
+          Estudio los libros prohibidos en Florida a través del marco de los silencios archivísticos como Derrida ha descrito y la creación de este sitio web como un contra-archivo comunitario, para demostrar cómo la censura produce borramiento cultural y por qué es importante documentar estos textos. Cuando este archivo funcionará como un contra-archivo, este reafirma el lugar de estas historias en la memoria cultural.
+        </p>
 
-      <p>
-        El formato digital también permite que el usuario vea de manera inmediata la contradicción entre los argumentos oficiales para censurar estos libros y la realidad social de los estudiantes. Al colocar estas narrativas en diálogo directo, el proyecto busca generar empatía, reflexión crítica y una mayor conciencia sobre las consecuencias educativas y culturales de la censura.
-      </p>
-    </div>
+        <p>
+          Estos objetivos se cumplirán mediante la creación de un sitio web. Cuando el usuario haga clic sobre la imagen de un libro prohibido, aparecerá un cuadro de texto con las razones de su prohibición, junto con estadísticas y testimonios que demuestran que esos temas prohibidos forman parte de la realidad de la población estudiantil.
+        </p>
 
-    <div class="intro-content" id="introContent2">
-  <h1>El Año 2025-2026 En Las Escuelas Públicas De Florida En Números</h1>
+        <p>
+          El formato digital también permite que el usuario vea de manera inmediata la contradicción entre los argumentos oficiales para censurar estos libros y la realidad social de los estudiantes. Al colocar estas narrativas en diálogo directo, el proyecto busca generar empatía, reflexión crítica y una mayor conciencia sobre las consecuencias educativas y culturales de la censura.
+        </p>
+      </div>
 
-  <div class="two-column-section">
-    <div class="text-side">
-      <h2>Población Hispana</h2>
-      <p>
-        38,2% de los estudiantes en las escuelas públicas de Florida son hispanos. 
-        Se compone de 1.068.077 estudiantes de un total de 2.792.954.
-      </p>
-    </div>
+      <div class="intro-content" id="introContent2">
+        <h1>El Año 2025-2026 En Las Escuelas Públicas De Florida En Números</h1>
 
-    <div class="image-side">
-      <img 
-        src="chart_poblacion_hispano.png" 
-        alt="Gráfico de la población hispana en las escuelas públicas de Florida"
-        class="context-chart"
-      />
+        <div class="two-column-section">
+          <div class="text-side">
+            <h2>Población Hispana</h2>
+            <p>
+              38,2% de los estudiantes en las escuelas públicas de Florida son hispanos.
+              Se compone de 1.068.077 estudiantes de un total de 2.792.954.
+            </p>
+          </div>
+
+          <div class="image-side">
+            <img
+              src="chart_poblacion_hispano.png"
+              alt="Gráfico de la población hispana en las escuelas públicas de Florida"
+              class="context-chart"
+            />
+          </div>
+        </div>
+
+        <h2>Migración</h2>
+
+        <p>
+          0,3% de los estudiantes son migrantes, significando que 8.441 estudiantes no son ciudadanos.
+          Pero el porcentaje de estudiantes que tienen al menos un padre que es inmigrante es mucho más alto.
+          Desplácese hacia abajo para ver un mapa de los hogares inmigrantes y los distritos escolares.
+        </p>
+
+        <div class="map-section">
+          <h2>Mapa: Estudiantes De Hogares Inmigrantes</h2>
+
+          <p>
+            Este mapa interactivo no puede mostrarse directamente dentro de este sitio porque la página original bloquea la incrustación.
+            Puede abrirse en una nueva pestaña para explorar los datos por distrito.
+          </p>
+
+          <a
+            href="https://cis.org/Percentage-Students-Immigrant-Households-Full-2021"
+            target="_blank"
+            class="map-button">
+            Abrir El Mapa Interactivo
+          </a>
+
+          <p class="map-credit">
+            Fuente: Center for Immigration Studies, “Mapping the Impact of Immigration on Public Schools - 2021.”
+          </p>
+        </div>
+
+        <h2>Lengua</h2>
+
+        <p>
+          12,3% de la población total, o 344.427 estudiantes, están aprendiendo inglés en el año escolar 2025-2026.
+        </p>
+
+        <div class="two-column-section">
+          <div class="text-side">
+            <h2>Proceso Gubernamental</h2>
+
+            <p>
+              Hay 3.259 escuelas públicas en 67 distritos escolares, que son los mismos distritos de los condados.
+              Las prohibiciones son evaluadas a nivel de condado, y el condado de Clay tiene la mayor cantidad de prohibiciones
+              en los cuatro años pasados, con 745 libros eliminados.
+            </p>
+          </div>
+
+          <div class="image-side">
+            <img
+              src="florida_counties.png"
+              alt="Mapa de los condados de Florida"
+              class="context-chart"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-content" id="introContent3">
+        <h1>Fuentes</h1>
+
+        <h2>Reportes Oficiales De Las Prohibiciones De Los Libros</h2>
+
+        <p>
+          <a href="school-year-2024-2025.pdf" target="_blank">
+            Florida Department of Education, “2024-2025 School District Reporting Pursuant to Section 1006.28(2), Florida Statutes”
+          </a>
+        </p>
+
+        <p>
+          <a href="school-year-2023-2024.pdf" target="_blank">
+            Florida Department of Education, “2023-2024 School District Reporting Pursuant to Section 1006.28(2), Florida Statutes”
+          </a>
+        </p>
+
+        <p>
+          <a href="school-year-2022-2023.pdf" target="_blank">
+            Florida Department of Education, “2022-2023 School District Reporting Pursuant to Section 1006.28(2), Florida Statutes”
+          </a>
+        </p>
+
+        <h2>Web Sitios Del Gobierno De Florida</h2>
+
+        <p>
+          <a href="https://edudata.fldoe.org/index.html" target="_blank">
+            “Know Your Schools.” Edudata, Florida Department of Education.
+          </a>
+        </p>
+
+        <p>
+          <a href="https://cims2.floridacims.org/" target="_blank">
+            “Published District and School Plans.” CIMS 2, Florida Department of Education.
+          </a>
+        </p>
+      </div>
+
+      <div class="intro-buttons">
+        <button id="introNextButton" onclick="nextIntroTab()">Siguiente</button>
+      </div>
+
     </div>
   </div>
 
-  <h2>Migración</h2>
-  <p>
-    0,3% de los estudiantes son migrantes, significando que 8.441 estudiantes no son ciudadanos. 
-    Pero el porcentaje de estudiantes que tienen al menos un padre que es inmigrante es mucho más alto. 
-    Desplácese hacia abajo para ver un mapa de los hogares inmigrantes y los distritos escolares.
-  </p>
+  <div id="mainArchive">
 
-  <h2>Lengua</h2>
-  <p>
-    12,3% de la población total, o 344.427 estudiantes, están aprendiendo inglés en el año escolar 2025-2026.
-  </p>
+    <img
+      src="cover_La_casa_en_Mango_Street.jpg"
+      alt="Portada de La casa en Mango Street"
+      class="book"
+      id="book"
+    />
 
- <div class="two-column-section">
-    <div class="text-side">
-      <h2>Proceso gubernamental</h2>
-      <p>
-     Hay 3.259 escuelas públicas en 67 distritos escolares, que son los mismos distritos de los condados. 
-    Las prohibiciones son evaluadas a nivel de condado, y el condado de Clay tiene las más prohibiciones 
-        en los cuatros años pasados con 745 libros eliminados.
-      </p>
-    </div>
+    <div class="popup" id="popup">
+      <div class="tabs">
+        <button class="tab-button active" onclick="openBookTab('informacion')">
+          Información
+        </button>
 
-    <div class="image-side">
-      <img 
-        src="florida_counties.png" 
-        alt="Gráfico de los condados de Florida"
-        class="context-chart"
-      />
-    </div>
-  </div>
+        <button class="tab-button" onclick="openBookTab('contraarchivo')">
+          Contraarchivo
+        </button>
+      </div>
 
+      <div id="informacion" class="tab-content active">
+        <p><span class="label">Título:</span> La casa en Mango Street</p>
+        <p><span class="label">Autor/a:</span> Sandra Cisneros</p>
+        <p><span class="label">Condado(s):</span> Hernando</p>
+        <p><span class="label">Año primero removido:</span> 2024</p>
+        <p><span class="label">Temas:</span> la llegada a la madurez; identidad; pobreza; papeles de género</p>
+        <p><span class="label">Grados:</span> K-12</p>
 
-<div class="map-section">
-  <h2>Mapa: Estudiantes De Hogares Inmigrantes</h2>
+        <p>
+          <span class="label">Resumen:</span>
+          Esta es la historia de la llegada a la mayoría de edad de una niña chicana. Cuando Esperanza Cordero tenía 12 años, su familia se mudó a un barrio latino en Chicago, Illinois. La historia la sigue a ella y a sus amigos mientras crecen emocionalmente, artísticamente y sexualmente. En una serie de retratos, la autora explora la opresión, el racismo, el sexismo y la pobreza.
+        </p>
 
-  <p>
-    Este mapa interactivo no puede mostrarse directamente dentro de este sitio porque la página original bloquea la incrustación. 
-    Puede abrirse en una nueva pestaña para explorar los datos por distrito.
-  </p>
+        <p><span class="label">Las razones por la prohibición:</span></p>
+        <div class="fill-box">
+          Escribe aquí...
+        </div>
 
-  <a 
-    href="https://cis.org/Percentage-Students-Immigrant-Households-Full-2021" 
-    target="_blank" 
-    class="map-button">
-    Abrir El Mapa Interactivo
-  </a>
+        <p><span class="label">Las razones en contexto:</span></p>
+        <div class="fill-box">
+          Escribe aquí...
+        </div>
 
-  <p class="map-credit">
-    Fuente: Center for Immigration Studies, “Mapping the Impact of Immigration on Public Schools - 2021.”
-  </p>
-</div>
+        <p class="controversial-wrapper">
+          <span class="controversial-link">
+            Leer el resumen de las escenas controversiales
+          </span>
 
-    <div class="intro-content" id="introContent3">
-      <h1>Fuentes</h1>
+          <span class="controversial-popup">
+            Aquí puedes escribir tu resumen de las escenas controversiales.
+            Puedes leer más en
+            <a href="https://www.sparknotes.com/lit/mangostreet/section10/" target="_blank">
+              esta página
+            </a>.
+          </span>
+        </p>
+      </div>
 
-      <p>
-        <strong>Reportes oficiales de las prohibiciones de los libros:</strong>
-      </p>
+      <div id="contraarchivo" class="tab-content">
+        <p><span class="label">Contraarchivo:</span></p>
 
-      <p>
-        <a href="school%20year%202024-2025.pdf" target="_blank">
-          2024-2025 School District Reporting Pursuant to Section 1006.28(2), Florida Statutes
-        </a>
-      </p>
-
-      <p>
-        <a href="school%20year%202023-2024.pdf" target="_blank">
-          2023-2024 School District Reporting Pursuant to Section 1006.28(2), Florida Statutes
-        </a>
-      </p>
-
-      <p>
-        <a href="school%20year%202022-2023.pdf" target="_blank">
-          2022-2023 School District Reporting Pursuant to Section 1006.28(2), Florida Statutes
-        </a>
-      </p>
-    </div>
-
-  </div>
-        <div class="intro-buttons">
-      <button id="introNextButton" onclick="nextIntroTab()">Siguiente</button>
-    </div>
-</div>
-
-  <img
-    src="cover_La_casa_en_Mango_Street.jpg"
-    alt="Portada de La casa en Mango Street"
-    class="book"
-    id="book"
-  />
-
-  <div class="popup" id="popup">
-    <div class="tabs">
-      <button class="tab-button active" onclick="openTab('informacion')">
-        Información
-      </button>
-      <button class="tab-button" onclick="openTab('contraarchivo')">
-        Contraarchivo
-      </button>
-    </div>
-
-    <div id="informacion" class="tab-content active">
-      <p><span class="label">Título:</span> La casa en Mango Street</p>
-      <p><span class="label">Autor/a:</span> Sandra Cisneros</p>
-      <p><span class="label">Condado(s):</span> Hernando</p>
-      <p><span class="label">Año primero removido:</span> 2024</p>
-      <p><span class="label">Temas:</span> la llegada a la madurez; identidad; pobreza; papeles de género</p>
-      <p><span class="label">Grados:</span> K-12</p>
-
-      <p>
-        <span class="label">Resumen:</span> Esta es la historia de la llegada a la mayoría de edad de una niña chicana. Cuando Esperanza Cordero tenía 12 años, su familia se mudó a un barrio latino en Chicago, Illinois. La historia la sigue a ella y a sus amigos mientras crecen emocionalmente, artísticamente y sexualmente. En una serie de retratos, la autora explora la opresión, el racismo, el sexismo y la pobreza.
-      </p>
-
-      <p><span class="label">Las razones por la prohibición:</span> contenido sexual, temas sexuales, profanidad</p>
-
-      <p><span class="label">Las razones en contexto:</span> Esperanza es violada en el retrato se llama “Red Clowns.”</p>
-
-     <p class="controversial-wrapper">
-  <span class="controversial-link">
-    Leer el resumen de las escenas controversiales
-  </span>
-
-  <span class="controversial-popup">
-“Esperanza narra esta sección después de que haya sido agredida sexualmente por un grupo de chicos, y aunque ella le da sus impresiones y expresa su confusión, nunca especifica exactamente lo que los chicos le hacen. Sabemos que Esperanza va a un carnaval con Sally y que le gusta ver a Sally en los paseos. Sally parece descuidada y libre, y en un momento desaparece con un niño mayor. Mientras Esperanza espera a que Sally regrese, un grupo de chicos no latinos ataca a Esperanza. El evento no es nada como encuentros sexuales Esperanza ha visto en las películas o leído en revistas, o incluso como lo que Sally le ha dicho. Está traumatizada y sigue oyendo la voz de uno de los chicos diciendo con burla: "Te amo, chica española". Ella culpa a Sally por abandonarla y no estar allí para salvarla, y su ira se extiende a todas las mujeres que no le han dicho cómo es realmente el sexo.”
-      Puedes leer más en 
-  <a href="https://www.sparknotes.com/lit/mangostreet/section10/" target="_blank">
-    SparkNotes aquí
-  </a>.
-  </span>
-</p>
-
-    <div id="contraarchivo" class="tab-content">
-      <p><span class="label">Contraarchivo:</span></p>
-      <div class="contraarchivo-box">
-        Escribe aquí tu contraarchivo...
+        <div class="contraarchivo-box">
+          Escribe aquí tu contraarchivo...
+        </div>
       </div>
     </div>
+
   </div>
 
   <script>
+    let currentIntroTab = 1;
+
+    function nextIntroTab() {
+      document.getElementById("introContent" + currentIntroTab).classList.remove("active");
+      document.getElementById("introTab" + currentIntroTab).classList.remove("active");
+
+      currentIntroTab++;
+
+      if (currentIntroTab <= 3) {
+        document.getElementById("introContent" + currentIntroTab).classList.add("active");
+        document.getElementById("introTab" + currentIntroTab).classList.add("active");
+
+        if (currentIntroTab === 3) {
+          document.getElementById("introNextButton").textContent = "Entrar al archivo";
+        }
+      } else {
+        document.getElementById("introOverlay").style.display = "none";
+        document.getElementById("mainArchive").style.display = "block";
+        randomizeBookPosition();
+      }
+    }
+
+    function openBookTab(tabName) {
+      const tabContents = document.querySelectorAll(".tab-content");
+      const tabButtons = document.querySelectorAll(".tab-button");
+
+      tabContents.forEach(content => {
+        content.classList.remove("active");
+      });
+
+      tabButtons.forEach(button => {
+        button.classList.remove("active");
+      });
+
+      document.getElementById(tabName).classList.add("active");
+
+      if (tabName === "informacion") {
+        tabButtons[0].classList.add("active");
+      } else {
+        tabButtons[1].classList.add("active");
+      }
+    }
+
     const book = document.getElementById("book");
     const popup = document.getElementById("popup");
 
+    function randomizeBookPosition() {
+      const bookWidth = 120;
+      const bookHeight = 180;
+
+      const maxX = Math.max(window.innerWidth - bookWidth - 40, 20);
+      const maxY = Math.max(window.innerHeight - bookHeight - 40, 20);
+
+      const randomX = Math.floor(Math.random() * maxX) + 20;
+      const randomY = Math.floor(Math.random() * maxY) + 20;
+
+      book.style.left = randomX + "px";
+      book.style.top = randomY + "px";
+    }
+
     let isDragging = false;
+    let hasDragged = false;
     let offsetX = 0;
     let offsetY = 0;
 
-book.addEventListener("click", (e) => {
-  e.stopPropagation();
-  popup.classList.toggle("show");
-  positionPopupNearBook();
-});
-
-popup.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
-
-document.addEventListener("click", () => {
-  popup.classList.remove("show");
-});
-
-    book.addEventListener("mousedown", (e) => {
+    book.addEventListener("mousedown", function(e) {
       isDragging = true;
+      hasDragged = false;
       offsetX = e.clientX - book.offsetLeft;
       offsetY = e.clientY - book.offsetTop;
       book.style.cursor = "grabbing";
     });
 
-    document.addEventListener("mousemove", (e) => {
+    document.addEventListener("mousemove", function(e) {
       if (!isDragging) return;
+
+      hasDragged = true;
 
       book.style.left = e.clientX - offsetX + "px";
       book.style.top = e.clientY - offsetY + "px";
@@ -533,9 +658,29 @@ document.addEventListener("click", () => {
       positionPopupNearBook();
     });
 
-    document.addEventListener("mouseup", () => {
+    document.addEventListener("mouseup", function() {
       isDragging = false;
       book.style.cursor = "grab";
+    });
+
+    book.addEventListener("click", function(e) {
+      e.stopPropagation();
+
+      if (hasDragged) {
+        hasDragged = false;
+        return;
+      }
+
+      popup.classList.toggle("show");
+      positionPopupNearBook();
+    });
+
+    popup.addEventListener("click", function(e) {
+      e.stopPropagation();
+    });
+
+    document.addEventListener("click", function() {
+      popup.classList.remove("show");
     });
 
     function positionPopupNearBook() {
@@ -559,49 +704,7 @@ document.addEventListener("click", () => {
       popup.style.left = popupLeft + "px";
       popup.style.top = popupTop + "px";
     }
-
-    function openTab(tabName) {
-      const tabContents = document.querySelectorAll(".tab-content");
-      const tabButtons = document.querySelectorAll(".tab-button");
-
-      tabContents.forEach(content => {
-        content.classList.remove("active");
-      });
-
-      tabButtons.forEach(button => {
-        button.classList.remove("active");
-      });
-
-      document.getElementById(tabName).classList.add("active");
-
-      if (tabName === "informacion") {
-        tabButtons[0].classList.add("active");
-      } else {
-        tabButtons[1].classList.add("active");
-      }
-    }
-    let currentIntroTab = 1;
-
-function nextIntroTab() {
-  document.getElementById("introContent" + currentIntroTab).classList.remove("active");
-  document.getElementById("introTab" + currentIntroTab).classList.remove("active");
-
-  currentIntroTab++;
-
-  if (currentIntroTab <= 3) {
-    document.getElementById("introContent" + currentIntroTab).classList.add("active");
-    document.getElementById("introTab" + currentIntroTab).classList.add("active");
-
-    if (currentIntroTab === 3) {
-      document.getElementById("introNextButton").textContent = "Entrar al archivo";
-    }
-  } else {
-    document.getElementById("introOverlay").style.display = "none";
-  }
-}
   </script>
 
 </body>
-
-
 </html>
