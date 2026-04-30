@@ -584,83 +584,216 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
     </div>
   </div>
 
-  <div id="mainArchive">
+ <div id="mainArchive">
 
-    <img
-      src="cover_La_casa_en_Mango_Street.jpg"
-      alt="Portada de La casa en Mango Street"
-      class="book"
-      id="book"
-    />
+  <!-- BOOK 1: LA CASA EN MANGO STREET -->
 
-    <div class="popup" id="popup">
-      <div class="tabs">
-        <button class="tab-button active" onclick="openBookTab('informacion')">
-          Información
-        </button>
+  <img
+    src="cover_La_casa_en_Mango_Street.jpg"
+    alt="Portada de La casa en Mango Street"
+    class="book"
+    id="bookMango"
+  />
 
-        <button class="tab-button" onclick="openBookTab('contraarchivo')">
-          Contraarchivo
-        </button>
-      </div>
+  <div class="popup" id="popupMango">
+    <div class="tabs">
+      <button class="tab-button active" onclick="openBookTab('popupMango', 'informacionMango')">
+        Información
+      </button>
 
-      <div id="informacion" class="tab-content active">
-        <p><span class="label">Título:</span> La casa en Mango Street</p>
-        <p><span class="label">Autor/a:</span> Sandra Cisneros</p>
-        <p><span class="label">Condado(s):</span> Hernando</p>
-        <p><span class="label">Año primero removido:</span> 2024</p>
-        <p><span class="label">Temas:</span> la llegada a la madurez; identidad; pobreza; papeles de género</p>
-        <p><span class="label">Grados:</span> K-12</p>
-
-        <p>
-          <span class="label">Resumen:</span>
-          Esta es la historia de la llegada a la mayoría de edad de una niña chicana. Cuando Esperanza Cordero tenía 12 años, su familia se mudó a un barrio latino en Chicago, Illinois. La historia la sigue a ella y a sus amigos mientras crecen emocionalmente, artísticamente y sexualmente. En una serie de retratos, la autora explora la opresión, el racismo, el sexismo y la pobreza.
-        </p>
-
-        <p><span class="label">Las razones por la prohibición:</span>
-          contenido sexual, temas sexuales, profanidad
-        </p>
-
-
-        <p><span class="label">Las razones en contexto:</span>
-        Esperanza es violada en el retrato se llama “Red Clowns.” 
-</p>
-
-
-        <p class="controversial-wrapper">
-          <span class="controversial-link">
-            Leer el resumen de las escenas controversiales
-          </span>
-
-          <span class="controversial-popup">
-         “Esperanza narra esta sección después de que haya sido agredida sexualmente por un grupo de chicos, y aunque ella le da sus impresiones y expresa su confusión, nunca especifica exactamente lo que los chicos le hacen. Sabemos que Esperanza va a un carnaval con Sally y que le gusta ver a Sally en los paseos. Sally parece descuidada y libre, y en un momento desaparece con un niño mayor. Mientras Esperanza espera a que Sally regrese, un grupo de chicos no latinos ataca a Esperanza. El evento no es nada como encuentros sexuales Esperanza ha visto en las películas o leído en revistas, o incluso como lo que Sally le ha dicho. Está traumatizada y sigue oyendo la voz de uno de los chicos diciendo con burla: "Te amo, chica española". Ella culpa a Sally por abandonarla y no estar allí para salvarla, y su ira se extiende a todas las mujeres que no le han dicho cómo es realmente el sexo.” 
-            Puedes leer más en
-            <a href="https://www.sparknotes.com/lit/mangostreet/section10/" target="_blank">
-              esta página
-            </a>.
-          </span>
-        </p>
-      </div>
-
-      <div id="contraarchivo" class="tab-content">
-        <p><span class="label">Contraarchivo:</span></p>
-
-        <div class="contraarchivo-box">
-         <p>La historia de violación de Esperanza Cordena es compartida por niñas en las escuelas públicas de Florida.</p>
-          <p>35 estudiantes denunciaron violación o intento de violación en los recintos escolares en el año 2024-2025, y 90 estudiantes denunciaron agresiones sexuales en los recintos escolares en 2024-2025. No tiene sentido decir que los estudiantes no pueden leer sobre cosas que les están ocurriendo. También, la lástima que viene de incidentes de victimización puede ser ayudada por leer las experiencias de un carácter. Puede dar palabras a los estudiantes que ellos puedan usar para discutir sus propias experiencias.</p>
-
-<p>Además, los temas de la pobreza y el racismo aplican a las historias reales de los estudiantes también. 61,8% de los estudiantes tiene una desventaja económica en el año 2024-2025, y 813 estudiantes denunciaron agresiones debido a su raza, color o origen nacional. También, es probable que los números oficiales sean muchos más bajos que los números reales porque muchas víctimas sienten lástima y tienen miedo.</p>
-
-<p>Las estadísticas dan una idea del exceso de abuso sexual, pero la emoción de las historias es perdida. Una búsqueda simple en Google produce cientos de artículos de noticias sobre abuso sexual en las escuelas públicas de Florida.</p>
-
-<p>Es un problema real, pero la prohibición de libros que discuten el abuso sexual no cambia nada. De hecho, la prohibición se duele a las víctimas. Si la institución más grande en la vida de un niño, la escuela, dice que su historia es tan perversa para las escuelas, la lástima sola aumenta.</p> 
-          <p>Para los estudiantes que no han experimentado este abuso, es una oportunidad de aprender de cosas aterradoras de una manera segura. Los niños que aprenden de abuso son más probables de encontrar ayuda si están en peligro.</p>
-
-        </div>
-      </div>
+      <button class="tab-button" onclick="openBookTab('popupMango', 'contraarchivoMango')">
+        Contraarchivo
+      </button>
     </div>
 
+    <div id="informacionMango" class="tab-content active">
+      <p><span class="label">Título:</span> La casa en Mango Street</p>
+      <p><span class="label">Autor/a:</span> Sandra Cisneros</p>
+      <p><span class="label">Condado(s):</span> Hernando</p>
+      <p><span class="label">Año primero removido:</span> 2024</p>
+      <p><span class="label">Temas:</span> la llegada a la madurez; identidad; pobreza; papeles de género</p>
+      <p><span class="label">Grados:</span> K-12</p>
+
+      <p>
+        <span class="label">Resumen:</span>
+        Esta es la historia de la llegada a la mayoría de edad de una niña chicana. Cuando Esperanza Cordero tenía 12 años, su familia se mudó a un barrio latino en Chicago, Illinois. La historia la sigue a ella y a sus amigos mientras crecen emocionalmente, artísticamente y sexualmente. En una serie de retratos, la autora explora la opresión, el racismo, el sexismo y la pobreza.
+      </p>
+
+      <p><span class="label">Las razones por la prohibición:</span></p>
+      <div class="fill-box">
+        Escribe aquí...
+      </div>
+
+      <p><span class="label">Las razones en contexto:</span></p>
+      <div class="fill-box">
+        Escribe aquí...
+      </div>
+
+      <p class="controversial-wrapper">
+        <span class="controversial-link">
+          Leer el resumen de las escenas controversiales
+        </span>
+
+        <span class="controversial-popup">
+          Aquí puedes escribir tu resumen de las escenas controversiales.
+          Puedes leer más en
+          <a href="https://www.sparknotes.com/lit/mangostreet/section10/" target="_blank">
+            esta página
+          </a>.
+        </span>
+      </p>
+    </div>
+
+    <div id="contraarchivoMango" class="tab-content">
+      <p><span class="label">Contraarchivo:</span></p>
+
+      <div class="contraarchivo-box">
+        Escribe aquí tu contraarchivo...
+      </div>
+    </div>
   </div>
+
+
+  <!-- BOOK 2: NO SOY TU PERFECTA HIJA MEXICANA -->
+
+  <img
+    src="cover_No_soy_tu_perfecta_hija_mexicana.jpg"
+    alt="Portada de No soy tu perfecta hija mexicana"
+    class="book"
+    id="bookMexicana"
+  />
+
+  <div class="popup" id="popupMexicana">
+    <div class="tabs">
+      <button class="tab-button active" onclick="openBookTab('popupMexicana', 'informacionMexicana')">
+        Información
+      </button>
+
+      <button class="tab-button" onclick="openBookTab('popupMexicana', 'contraarchivoMexicana')">
+        Contraarchivo
+      </button>
+    </div>
+
+    <div id="informacionMexicana" class="tab-content active">
+      <p><span class="label">Título:</span> No soy tu perfecta hija mexicana</p>
+      <p><span class="label">Autor/a:</span> Erika L. Sánchez</p>
+      <p><span class="label">Condado(s):</span> Clay, Martin, Volusia</p>
+      <p><span class="label">Año primero removido:</span> 2023</p>
+      <p><span class="label">Temas:</span> identidad mexicoamericana; duelo; expectativas familiares; salud mental; madurez</p>
+      <p><span class="label">Grados:</span> K-12</p>
+
+      <p>
+        <span class="label">Resumen:</span>
+        Las hijas mexicanas perfectas no se van a la universidad. Y no se mudan de la casa de sus padres después de la graduación de la escuela secundaria. Las hijas mexicanas perfectas nunca abandonan a su familia.
+      </p>
+
+      <p>
+        Pero Julia no es tu hija mexicana perfecta. Ese era el papel de Olga.
+      </p>
+
+      <p>
+        Luego, un trágico accidente en la calle más concurrida de Chicago deja a Olga muerta y Julia abandonada para volver a ensamblar las piezas destrozadas de su familia. Y nadie parece reconocer que Julia también está rota. En cambio, su madre parece canalizar su dolor para señalar todas las formas posibles en que Julia ha fallado.
+      </p>
+
+      <p>
+        Pero no pasa mucho tiempo antes de que Julia descubra que Olga podría no haber sido tan perfecta como todos pensaban. Con la ayuda de su mejor amiga Lorena, y su primer beso, primer amor, primero todo novio Connor, Julia está decidida a averiguarlo. ¿Era Olga realmente lo que parecía? ¿O había más en la historia de su hermana? Y de cualquier manera, ¿cómo puede Julia siquiera intentar estar a la altura de un ideal aparentemente imposible?
+      </p>
+
+      <p>
+        <span class="label">Las razones por la prohibición:</span>
+        contenido sexual, suicidio, sentimientos antirreligiosos, profanidad
+      </p>
+
+      <p>
+        <span class="label">Las razones en contexto:</span>
+        En el capítulo 14, Julia y su novio Connor tienen relaciones sexuales. Mientras la acción no es demostrada, entre el capítulo 16 y el capítulo 17 hay un intento de suicidio.
+      </p>
+
+      <p class="controversial-wrapper">
+        <span class="controversial-link">
+          Leer el resumen de las escenas controversiales
+        </span>
+
+        <span class="controversial-popup">
+          <strong>Contenido sexual:</strong> Mientras están viendo videos, Connor le dice a Julia lo hermosa que es. Él comienza a besarla, y pronto él está encima de ella en el sofá. Julia todavía tiene sus zapatos puestos, y sabe que necesita quitárselos, pero está atormentada por el recuerdo de un tiempo en la escuela primaria cuando una cucaracha salió de su zapatilla en la casa de un amigo. Julia le dice a Connor que disminuya la velocidad por un minuto, él le pregunta si es virgen, y ella confirma que lo es. Él le pregunta si ella está segura de que está lista para tener relaciones sexuales, y ella dice que lo está. Connor saca un condón de debajo de un cojín de sofá, se lo pone, y los dos tienen relaciones sexuales.
+          <a href="https://www.litcharts.com/lit/i-am-not-your-perfect-mexican-daughter/chapter-15" target="_blank">
+            Fuente
+          </a>.
+
+          <br><br>
+
+          <strong>Intento de suicidio:</strong> Un día, después de la escuela, Julia decide tomar el autobús al centro. Está sin dinero y tiene frío, pero necesita tiempo para sí misma. En Millennium Park, camina por el anfiteatro y la pista de patinaje. Empieza a contemplar cuál es el sentido de vivir si nunca puede conseguir lo que quiere. El capítulo 16 termina. El capítulo 17 empieza cuando Julia se despierta en una cama de hospital con Amá de pie sobre ella. Julia recuerda dónde está y lo que hizo. La omisión narrativa permite a los lectores llenar los espacios en blanco sobre el intento de suicidio de Julia.
+          <a href="https://www.litcharts.com/lit/i-am-not-your-perfect-mexican-daughter/chapter-17" target="_blank">
+            Fuente
+          </a>.
+        </span>
+      </p>
+    </div>
+
+    <div id="contraarchivoMexicana" class="tab-content">
+      <p><span class="label">Contraarchivo:</span></p>
+
+      <div class="contraarchivo-box">
+        <p>
+          El suicidio es un problema fuerte para jóvenes, y los estudiantes en las escuelas públicas de Florida no son excepciones. Especialmente porque las niñas hispanas, como Julia en el libro, tienen tasas de suicidio más altas que las niñas blancas o afroamericanas. Una razón propuesta son las presiones únicas en las niñas hispanas que vienen de factores culturales. La historia de Julia es una historia importante porque refleja un problema específico a la historia de una niña hispana, y es un error prohibir la historia.
+        </p>
+
+        <p>
+          En 2019, según una encuesta sobre comportamientos de riesgo en jóvenes, se hicieron preguntas a estudiantes de secundaria en Florida, tanto hombres como mujeres, sobre las señales de riesgo de suicidio.
+        </p>
+
+        <p>
+          El 24,2% de los estudiantes varones y el 43,4% de las estudiantes mujeres manifestaron sentirse tristes o desesperanzados.
+        </p>
+
+        <p>
+          El 10,9% de los estudiantes varones y el 20,2% de las estudiantes mujeres declararon haber considerado seriamente la posibilidad de suicidarse.
+        </p>
+
+        <p>
+          El 8,2% de los estudiantes varones y el 15,5% de las estudiantes mujeres informaron haber hecho un plan para suicidarse.
+        </p>
+
+        <p>
+          El 6% de los estudiantes varones y el 9,6% de las estudiantes mujeres informaron haber intentado suicidarse.
+        </p>
+
+        <p>
+          El 10,5% de los estudiantes varones y el 21% de las estudiantes mujeres informaron haberse autolesionado intencionadamente sin querer morir.
+        </p>
+
+        <p>
+          Un reporte oficial que tiene el propósito de ayudar a los maestros a prevenir el suicidio en sus estudiantes dice que un problema grande es que las personas no hablan sobre el suicidio. Es un secreto, y los estudiantes no saben cómo tratar sus propios pensamientos de suicidio ni los pensamientos de sus compañeros. Más educación y más visibilidad sobre el hecho de que el suicidio puede ser prevenido son importantes.
+        </p>
+
+        <p>
+          <span class="label">Fuentes:</span>
+        </p>
+
+        <p>
+          <a href="https://www.floridahealth.gov/individual-family-health/injury-prevention-wellness/mental-health/youth-suicide-prevention/" target="_blank">
+            “Youth Suicide Prevention.” Florida Department of Health.
+          </a>
+        </p>
+
+        <p>
+          <a href="https://www.nova.edu/publications/florida-toolkit/2021/florida-school-toolkit-educators-to-prevent-suicide/172/" target="_blank">
+            Florida School Toolkit for K-12 Educators to Prevent Suicide. Nova Southeastern University.
+          </a>
+        </p>
+
+        <p>
+          Zayas, Luis H., and Amelia M. Pilat.
+          <a href="https://doi.org/10.1521/suli.2008.38.3.334" target="_blank">
+            “Suicidal Behavior in Latinas: Explanatory Cultural Factors and Implications for Intervention.”
+          </a>
+          <em>Suicide and Life-Threatening Behavior</em>, vol. 38, no. 3, 2008, pp. 334–342.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
 
   <script>
     let currentIntroTab = 1;
@@ -681,118 +814,148 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
       } else {
         document.getElementById("introOverlay").style.display = "none";
         document.getElementById("mainArchive").style.display = "block";
-        randomizeBookPosition();
+        randomizeAllBooks();
       }
     }
 
-    function openBookTab(tabName) {
-      const tabContents = document.querySelectorAll(".tab-content");
-      const tabButtons = document.querySelectorAll(".tab-button");
+function openBookTab(popupId, tabId) {
+  const popup = document.getElementById(popupId);
+  const tabContents = popup.querySelectorAll(".tab-content");
+  const tabButtons = popup.querySelectorAll(".tab-button");
 
-      tabContents.forEach(content => {
-        content.classList.remove("active");
-      });
+  tabContents.forEach(content => {
+    content.classList.remove("active");
+  });
 
-      tabButtons.forEach(button => {
-        button.classList.remove("active");
-      });
+  tabButtons.forEach(button => {
+    button.classList.remove("active");
+  });
 
-      document.getElementById(tabName).classList.add("active");
+  document.getElementById(tabId).classList.add("active");
 
-      if (tabName === "informacion") {
-        tabButtons[0].classList.add("active");
-      } else {
-        tabButtons[1].classList.add("active");
-      }
-    }
+  if (tabId.toLowerCase().includes("informacion")) {
+    tabButtons[0].classList.add("active");
+  } else {
+    tabButtons[1].classList.add("active");
+  }
+}
 
-    const book = document.getElementById("book");
-    const popup = document.getElementById("popup");
+const bookEntries = [
+  {
+    book: document.getElementById("bookMango"),
+    popup: document.getElementById("popupMango")
+  },
+  {
+    book: document.getElementById("bookMexicana"),
+    popup: document.getElementById("popupMexicana")
+  }
+];
 
-    function randomizeBookPosition() {
-      const bookWidth = 120;
-      const bookHeight = 180;
+function randomizeAllBooks() {
+  bookEntries.forEach(entry => {
+    randomizeBookPosition(entry.book);
+  });
+}
 
-      const maxX = Math.max(window.innerWidth - bookWidth - 40, 20);
-      const maxY = Math.max(window.innerHeight - bookHeight - 40, 20);
+function randomizeBookPosition(book) {
+  const bookWidth = 120;
+  const bookHeight = 180;
 
-      const randomX = Math.floor(Math.random() * maxX) + 20;
-      const randomY = Math.floor(Math.random() * maxY) + 20;
+  const maxX = Math.max(window.innerWidth - bookWidth - 40, 20);
+  const maxY = Math.max(window.innerHeight - bookHeight - 40, 20);
 
-      book.style.left = randomX + "px";
-      book.style.top = randomY + "px";
-    }
+  const randomX = Math.floor(Math.random() * maxX) + 20;
+  const randomY = Math.floor(Math.random() * maxY) + 20;
 
-    let isDragging = false;
-    let hasDragged = false;
-    let offsetX = 0;
-    let offsetY = 0;
+  book.style.left = randomX + "px";
+  book.style.top = randomY + "px";
+}
 
-    book.addEventListener("mousedown", function(e) {
-      isDragging = true;
+bookEntries.forEach(entry => {
+  makeBookDraggable(entry.book, entry.popup);
+});
+
+function makeBookDraggable(book, popup) {
+  let isDragging = false;
+  let hasDragged = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  book.addEventListener("mousedown", function(e) {
+    isDragging = true;
+    hasDragged = false;
+    offsetX = e.clientX - book.offsetLeft;
+    offsetY = e.clientY - book.offsetTop;
+    book.style.cursor = "grabbing";
+  });
+
+  document.addEventListener("mousemove", function(e) {
+    if (!isDragging) return;
+
+    hasDragged = true;
+
+    book.style.left = e.clientX - offsetX + "px";
+    book.style.top = e.clientY - offsetY + "px";
+
+    positionPopupNearBook(book, popup);
+  });
+
+  document.addEventListener("mouseup", function() {
+    isDragging = false;
+    book.style.cursor = "grab";
+  });
+
+  book.addEventListener("click", function(e) {
+    e.stopPropagation();
+
+    if (hasDragged) {
       hasDragged = false;
-      offsetX = e.clientX - book.offsetLeft;
-      offsetY = e.clientY - book.offsetTop;
-      book.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", function(e) {
-      if (!isDragging) return;
-
-      hasDragged = true;
-
-      book.style.left = e.clientX - offsetX + "px";
-      book.style.top = e.clientY - offsetY + "px";
-
-      positionPopupNearBook();
-    });
-
-    document.addEventListener("mouseup", function() {
-      isDragging = false;
-      book.style.cursor = "grab";
-    });
-
-    book.addEventListener("click", function(e) {
-      e.stopPropagation();
-
-      if (hasDragged) {
-        hasDragged = false;
-        return;
-      }
-
-      popup.classList.toggle("show");
-      positionPopupNearBook();
-    });
-
-    popup.addEventListener("click", function(e) {
-      e.stopPropagation();
-    });
-
-    document.addEventListener("click", function() {
-      popup.classList.remove("show");
-    });
-
-    function positionPopupNearBook() {
-      const bookRect = book.getBoundingClientRect();
-
-      let popupLeft = bookRect.right + 20;
-      let popupTop = bookRect.top;
-
-      if (popupLeft + popup.offsetWidth > window.innerWidth) {
-        popupLeft = bookRect.left - popup.offsetWidth - 20;
-      }
-
-      if (popupTop + popup.offsetHeight > window.innerHeight) {
-        popupTop = window.innerHeight - popup.offsetHeight - 20;
-      }
-
-      if (popupTop < 20) {
-        popupTop = 20;
-      }
-
-      popup.style.left = popupLeft + "px";
-      popup.style.top = popupTop + "px";
+      return;
     }
+
+    closeAllPopupsExcept(popup);
+    popup.classList.toggle("show");
+    positionPopupNearBook(book, popup);
+  });
+
+  popup.addEventListener("click", function(e) {
+    e.stopPropagation();
+  });
+}
+
+document.addEventListener("click", function() {
+  closeAllPopupsExcept(null);
+});
+
+function closeAllPopupsExcept(activePopup) {
+  bookEntries.forEach(entry => {
+    if (entry.popup !== activePopup) {
+      entry.popup.classList.remove("show");
+    }
+  });
+}
+
+function positionPopupNearBook(book, popup) {
+  const bookRect = book.getBoundingClientRect();
+
+  let popupLeft = bookRect.right + 20;
+  let popupTop = bookRect.top;
+
+  if (popupLeft + popup.offsetWidth > window.innerWidth) {
+    popupLeft = bookRect.left - popup.offsetWidth - 20;
+  }
+
+  if (popupTop + popup.offsetHeight > window.innerHeight) {
+    popupTop = window.innerHeight - popup.offsetHeight - 20;
+  }
+
+  if (popupTop < 20) {
+    popupTop = 20;
+  }
+
+  popup.style.left = popupLeft + "px";
+  popup.style.top = popupTop + "px";
+}
   </script>
 
 </body>
