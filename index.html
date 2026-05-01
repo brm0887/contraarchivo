@@ -354,6 +354,43 @@
         width: 88%;
       }
     }
+    .story-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.story-text {
+  flex: 1;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.story-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.story-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* For phones/smaller screens */
+@media (max-width: 768px) {
+  .story-block {
+    flex-direction: column;
+  }
+
+  .story-image {
+    justify-content: center;
+  }
+}
   </style>
 </head>
 
