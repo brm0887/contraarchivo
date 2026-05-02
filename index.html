@@ -394,7 +394,92 @@
     .right-text {
   text-align: right;
 }
+.transparent-chart {
+  max-width: 100%;
+  max-height: 280px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
 
+    .conclusion-button {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  padding: 14px 18px;
+  background: #4b2e1f;
+  color: white;
+  border: 2px solid #fff0d6;
+  border-radius: 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.conclusion-button:hover {
+  background: #8b5e3c;
+}
+
+.conclusion-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(25, 15, 10, 0.72);
+  z-index: 9998;
+  justify-content: center;
+  align-items: center;
+}
+
+.conclusion-popup.show {
+  display: flex;
+}
+
+.conclusion-box {
+  position: relative;
+  width: 70%;
+  max-width: 850px;
+  max-height: 75vh;
+  overflow-y: auto;
+  background: rgba(255, 248, 235, 0.98);
+  border: 3px solid #4b2e1f;
+  border-radius: 18px;
+  padding: 34px 42px;
+  color: #2a1a12;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+  font-size: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+.conclusion-box h1 {
+  text-align: center;
+  color: #4b2e1f;
+  margin-top: 0;
+}
+
+.close-conclusion {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: #4b2e1f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.close-conclusion:hover {
+  background: #8b5e3c;
+}
   </style>
 </head>
 
@@ -417,18 +502,18 @@
   En años recientes, muchas de las prohibiciones de libros en las escuelas públicas de Florida se dirigen a obras con temáticas latinas e inmigrantes. Pero un tercio de los estudiantes en las escuelas públicas de Florida son latinos, y otra estadística dice que un tercio son migrantes o tienen padres migrantes.
 </p>
 <p>
-Mi tesis es que esta prohibición de libros con temáticas latinas, migrantes o en español produce un borramiento cultural al excluir del espacio escolar experiencias que forman parte de la vida cotidiana de muchos estudiantes; frente a ello, mi archivo digital funciona como un contra-archivo que restituye la visibilidad de esas narrativas.
+Mi tesis es que esta prohibición de libros con temáticas latinas, migrantes o en español produce un borramiento cultural al excluir del espacio escolar experiencias que forman parte de la vida cotidiana de muchos estudiantes; frente a ello, mi archivo digital funciona como un contraarchivo que restituye la visibilidad de esas narrativas.
 </p>
 <p>
-Estas prohibiciones de libros constituyen silencios archivísticos porque el estado decide a qué perspectivas están expuestos los estudiantes. Esta idea se relaciona con las obras de Michel-Rolph Trouillet que discute los silencios que son construidos en el registro histórico y es relacionada a las obras de Jacques Derrida que afirma que el archivo tiene el poder institucional de excluir. 
+Estas prohibiciones de libros constituyen silencios archivísticos porque el estado decide a qué perspectivas están expuestos los estudiantes.
 </p>
 <p>
-Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las narrativas prohibidas y las narrativas vividas de los estudiantes—en diálogo directo.  Cuando el usuario haga clic la imagen de un libro prohibido como “La Casa en Mango Street” por Sandra Cisneros, “La casa de los espíritus” por Isabel Allende, y “No soy tu perfecta hija mexicana” por Erika Sánchez, aparecerá un cuadro de texto con las razones de su prohibición, junto con estadísticas y testimonios que demuestran que esos temas forman parte de la realidad de los estudiantes.
+Pero mi sitio web funciona como un contrararchivo que coloca estas narrativas—las narrativas prohibidas y las narrativas vividas de los estudiantes—en diálogo directo.  Cuando el usuario haga clic en la imagen de un libro prohibido como “La Casa en Mango Street” por Sandra Cisneros o “No soy tu perfecta hija mexicana” por Erika Sánchez, aparecerá un cuadro de texto con las razones de su prohibición, junto con estadísticas y testimonios que demuestran que esos temas forman parte de la realidad de los estudiantes.
 </p>
       </div>
 
       <div class="intro-content" id="introContent2">
-        <h1>El año 2025-2026 en las escuelas públicas de Florida en números</h1>
+        <h1>Contexto</h1>
 
         <div class="two-column-section">
           <div class="text-side">
@@ -440,11 +525,11 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
           </div>
 
           <div class="image-side">
-            <img
-              src="chart_poblacion_hispano.png"
-              alt="Gráfico de la población hispana en las escuelas públicas de Florida"
-              class="context-chart"
-            />
+           <img
+  src="chart_poblacion_hispano.png"
+  alt="Gráfico de la población hispana en las escuelas públicas de Florida"
+  class="transparent-chart"
+          />
           </div>
         </div>
 
@@ -457,7 +542,7 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
         </p>
 
         <div class="map-section">
-          <h2>Mapa: estudiantes de Hogares inmigrantes</h2>
+          <h2>Mapa: estudiantes de hogares inmigrantes</h2>
 
           <p>
             Este mapa interactivo no puede mostrarse directamente dentro de este sitio porque la página original bloquea la incrustación.
@@ -489,7 +574,7 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
             <p>
               Hay 3.259 escuelas públicas en 67 distritos escolares, que son los mismos distritos de los condados.
               Las prohibiciones son evaluadas a nivel de condado, y el condado de Clay tiene la mayor cantidad de prohibiciones
-              en los cuatro años pasados, con 745 libros eliminados.
+              en los cuatro años pasados, con 745 libros eliminados. Clay está en el noreste como parte de la área metropolitana de Jacksonville.
             </p>
           </div>
 
@@ -518,7 +603,7 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
 <li>Love in the Time of Cholera</li>
 <li>One Hundred Years of Solitude</li>
 <li>Perfect</li>
-<li>Solo Quedo Nuestra Historia</li>
+<li><b>Solo Quedó Nuestra Historia</b></li>
 <li>The Brief Wondrous Life of Oscar Wao</li>
 <li>The House of Spirits</li>
 <li><b>The House on Mango Street</b></li>
@@ -663,6 +748,30 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
 
  <div id="mainArchive">
 
+   <button class="conclusion-button" onclick="openConclusion()">
+  Conclusión
+</button>
+
+<div id="conclusionPopup" class="conclusion-popup">
+  <div class="conclusion-box">
+    <button class="close-conclusion" onclick="closeConclusion()">×</button>
+
+    <h1>Conclusión</h1>
+
+    <p>
+      Este contraarchivo demuestra que las prohibiciones de libros no eliminan simplemente textos de los estantes escolares; también reducen la visibilidad de experiencias que muchos estudiantes ya viven. Las historias latinas, inmigrantes, bilingües, religiosas, familiares, sexuales y queer que aparecen en estos libros no son temas lejanos ni inapropiados para Florida. Son parte de la realidad social de sus estudiantes.
+    </p>
+
+    <p>
+      Al yuxtaponer los argumentos oficiales de la censura con testimonios, estadísticas y contextos reales, este archivo revela una contradicción: lo que se presenta como protección estudiantil muchas veces funciona como borramiento cultural. Cuando una escuela elimina estas narrativas, también limita las oportunidades de reconocimiento, conversación y cuidado para los jóvenes que se ven reflejados en ellas.
+    </p>
+
+    <p>
+      Por eso, este sitio funciona como un contraarchivo. Reúne textos prohibidos, datos públicos y experiencias comunitarias para resistir los silencios producidos por las instituciones. En vez de aceptar la desaparición de estas obras, el archivo insiste en que estas historias pertenecen a la memoria cultural, educativa y pública de Florida.
+    </p>
+  </div>
+</div>
+
   <!-- BOOK 1: LA CASA EN MANGO STREET -->
 
   <img
@@ -696,12 +805,12 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
         Esta es la historia de la llegada a la mayoría de edad de una niña chicana. Cuando Esperanza Cordero tenía 12 años, su familia se mudó a un barrio latino en Chicago, Illinois. La historia la sigue a ella y a sus amigos mientras crecen emocionalmente, artísticamente y sexualmente. En una serie de retratos, la autora explora la opresión, el racismo, el sexismo y la pobreza.
       </p>
 
-      <p><span class="label">Las razones por la prohibición:</span>
+      <p><span class="label">Las razones de la prohibición:</span>
       contenido sexual, temas sexuales, profanidad
       </p>
 
       <p><span class="label"><b>Las razones en contexto:</b></span>
-       Esperanza es violada en el retrato se llama “Red Clowns.” 
+       Esperanza es violada en el retrato que se llama “Red Clowns.” 
       </p>
 
       <p class="controversial-wrapper">
@@ -733,10 +842,12 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
 
 <p>Para los estudiantes que no han experimentado este abuso, es una oportunidad de aprender de cosas aterradoras de una manera segura. Los niños que aprenden de abuso son más probables de encontrar ayuda si están en peligro.</p>
 
-<p><b>Sources:</b></p>
- <a href="https://edudata.fldoe.org/index.html" target="_blank">
-            Edudata
+<p><b>Fuentes:</b></p>
+    <p>
+          <a href="https://edudata.fldoe.org/index.html" target="_blank">
+            “Know Your Schools.” Edudata, Florida Department of Education.
           </a>
+        </p>
       </div>
     </div>
   </div>
@@ -788,7 +899,7 @@ Mi sitio web funciona como un contrararchivo que coloca estas narrativas—las n
       </p>
 
       <p>
-        <span class="label">Las razones por la prohibición:</span>
+        <span class="label">Las razones de la prohibición:</span>
         contenido sexual, suicidio, sentimientos antirreligiosos, profanidad
       </p>
 
@@ -904,7 +1015,7 @@ Contada en orden cronológico inverso y narrada desde perspectivas cambiantes, l
           </a>
       </p>
 
-      <p><span class="label">Las razones por la prohibición:</span>
+      <p><span class="label">Las razones de la prohibición:</span>
       contenido sexual, representaciones de incesto, profanidad
       </p>
 
@@ -975,7 +1086,21 @@ Las escuelas proporcionan espacios seguros para hablar de temas controvertidos, 
 </blockquote>
 <p class="right-text"><em>Julia Alvarez</em></p>
 
-
+        <p><b>Fuente</b></p>
+        <p>
+  Cado, Daniela.
+  <a href="https://www.nbcmiami.com/news/local/miami-class-president-overcomes-language-barrier-and-graduates-top-of-her-class/3624541/" target="_blank">
+    “Miami Class President Overcomes Language Barrier and Graduates Top of Her Class.”
+  </a>
+  <em>NBC 6 South Florida</em>, 28 May 2025.
+</p>
+<p>
+  National Coalition Against Censorship Staff. 
+  <a href="https://ncac.org/news/blog/interview-with-julia-alvarez" target="_blank">
+    “Interview With Julia Alvarez.”
+  </a>
+  <em>National Coalition Against Censorship</em>, 29 Jan. 2008.
+</p>
       </div>
     </div>
   </div>
@@ -1017,7 +1142,7 @@ Las escuelas proporcionan espacios seguros para hablar de temas controvertidos, 
     </p>
 
     <p>
-      <span class="label">Las razones por la prohibición:</span>
+      <span class="label">Las razones de la prohibición:</span>
       la pubertad, la sexualidad, temas sexuales, sentimientos antirreligiosos
     </p>
 
@@ -1131,7 +1256,7 @@ Las escuelas proporcionan espacios seguros para hablar de temas controvertidos, 
     </p>
 
     <p>
-      <span class="label">Las razones por la prohibición:</span>
+      <span class="label">Las razones de la prohibición:</span>
    la sexualidad, temas LGBTQ+ </p>
 
     <p>
@@ -1403,6 +1528,13 @@ function positionPopupNearBook(book, popup) {
 
   popup.style.left = popupLeft + "px";
   popup.style.top = popupTop + "px";
+}
+    function openConclusion() {
+  document.getElementById("conclusionPopup").classList.add("show");
+}
+
+function closeConclusion() {
+  document.getElementById("conclusionPopup").classList.remove("show");
 }
   </script>
 
